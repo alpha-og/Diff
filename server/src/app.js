@@ -1,9 +1,9 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import user from "./models/user-model.js";
 
-import { userRouter, projectsRouter } from "./utils/routes.js";
+import { authenticate } from "./utils/middlewares.js";
+import { authRouter, userRouter, projectsRouter } from "./utils/routes.js";
 
 const ROUTE_PREFIX = "/api/v1";
 
@@ -18,17 +18,7 @@ app.use(
     }),
 );
 
-// app.post("/api/v1/signup", (req, res) => {
-//   const newUser = new user(req.body);
-//   newUser
-//     .save()
-//     .then(() => res.send("User added"))
-//     .catch((err) => res.status(400).json({ message: err }));
-// });
-
-// app.use(ROUTE_PREFIX, publicRouter);
-// app.use(ROUTE_PREFIX, authRouter);
-// app.use(ROUTE_PREFIX + "/user", authenticate, authorize, userRouter);
 app.use(ROUTE_PREFIX, projectsRouter);
-app.use(ROUTE_PREFIX, userRouter);
+app.use(ROUTE_PREFIX, authenticate, userRouter);
+app.use(ROUTE_PREFIX, authRouter);
 export default app;

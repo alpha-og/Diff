@@ -2,28 +2,28 @@ import mongoose from "mongoose";
 import { fileSchema } from "../models/user-model.js";
 
 const projectSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    description: { type: String, required: true },
+    name: { type: String, required: false },
+    description: { type: String, required: false },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "users",
-        required: true,
+        required: false,
     },
-    techStacks: [{ type: String, required: true }],
+    techStacks: [{ type: String, required: false }],
     status: {
         type: String,
-        required: true,
+        required: false,
         enum: ["active", "completed", "archived"],
     },
-    projectURL: { type: String, required: true },
+    projectURL: { type: String, required: false },
     readmeFile: fileSchema,
     contributors: [{ type: mongoose.Schema.Types.ObjectId, ref: "users" }],
     sponsorship: [
         {
             sponsor: { type: mongoose.Schema.Types.ObjectId, ref: "sponsors" },
-            amount: { type: Number, required: true },
-            startDate: { type: Date, required: true },
-            endDate: { type: Date, required: true },
+            amount: { type: Number, required: false },
+            startDate: { type: Date, required: false },
+            endDate: { type: Date, required: false },
         },
     ],
     vacancies: [{ type: String, required: false }],
@@ -32,7 +32,7 @@ const projectSchema = new mongoose.Schema({
             user: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
             status: {
                 type: String,
-                required: true,
+                required: false,
                 enum: ["pending", "accepted", "rejected"],
             },
         },
