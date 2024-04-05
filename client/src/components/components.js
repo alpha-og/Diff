@@ -1,3 +1,5 @@
 import User from "./user.jsx";
 
-export { User };
+import ProjectsList from "./projects/ProjectsList.jsx";
+
+export { User, ProjectsList };
