@@ -6,6 +6,8 @@ import user from "./models/user.js";
 // import { authenticate, authorize } from "./utils/middlewares.js";
 // import { publicRouter, authRouter, userRouter } from "./utils/routes.js";
 
+import projectsRouter from "./routes/projects-routes.js";
+
 const ROUTE_PREFIX = "/api/v1";
 
 const app = express();
@@ -19,16 +21,16 @@ app.use(
   }),
 );
 
-app.post("/api/v1/signup", (req, res) => {
-  const newUser = new user(req.body);
-  newUser
-    .save()
-    .then(() => res.send("User added"))
-    .catch((err) => res.status(400).json({ message: err }));
-});
+// app.post("/api/v1/signup", (req, res) => {
+//   const newUser = new user(req.body);
+//   newUser
+//     .save()
+//     .then(() => res.send("User added"))
+//     .catch((err) => res.status(400).json({ message: err }));
+// });
 
 // app.use(ROUTE_PREFIX, publicRouter);
 // app.use(ROUTE_PREFIX, authRouter);
 // app.use(ROUTE_PREFIX + "/user", authenticate, authorize, userRouter);
-
+app.use(ROUTE_PREFIX, projectsRouter);
 export default app;
