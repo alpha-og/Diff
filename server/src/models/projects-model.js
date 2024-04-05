@@ -16,7 +16,7 @@ const projectSchema = new mongoose.Schema({
         enum: ["active", "completed", "archived"],
     },
     projectURL: { type: String, required: false },
-    readmeFile: fileSchema,
+    readmeFile: { type: String, required: false },
     contributors: [{ type: mongoose.Schema.Types.ObjectId, ref: "users" }],
     sponsorship: [
         {

@@ -6,15 +6,30 @@ import mongoose from "mongoose";
 const createProject = async (req, res) => {
     const description = req.body.description;
     const githubURL = req.body.projectURL;
-    const head = githubURL.split("/");
-    console.log(head);
-    const querySTMT =
-        "give me a comma separated string containing all the tech stacks required by the project based on this abstract. I DO NOT want arrays, json objects, or any other fancy stuff. simple plain comma separated words corresponding to the tech stack for the project";
-    let techStacks = await GemniPrompt(description, querySTMT);
+    const splitURL = githubURL.split("/");
+    const { readmeContent, contributors } = await fetchRepoData(
+        splitURL[3],
+        splitURL[4],
+    );
+    let querySTMT =
+        "give me a comma separated string containing all the tech stacks required by the project based on this abstract. I DO NOT want arrays, json objects, or any other fancy stuff. simple plain comma separated words corresponding to the tech stack for the project, if there are not tech stacks, just type ''";
+    const techStacks = await GemniPrompt(description, querySTMT);
+    console.log(techStacks);
     req.body.techStacks = techStacks.split(", ");
+    querySTMT = "Provide a summary of the given text";
+    const summary = await GemniPrompt(
+        `${readmeContent} \n ${contributors}`,
+        querySTMT,
+    );
+    console.log("\n\n\n", summary);
+    req.body.summary = summary;
+    req.body.contributors = contributors;
+    req.body.readmeFile = readmeContent;
     const Project = new ProjectModel(req.body);
+    console.log("\n\n\n", Project);
     try {
-        await Project.save();
+        const res_ = await Project.save();
+        console.log("\n \n \n", res_);
         res.status(201).json(Project);
     } catch (error) {
         res.status(409).json({ message: error.message });
