@@ -6,11 +6,9 @@ import { ProjectsContext } from "../../store/projects";
 const ProjectCard = ({ project }) => {
   const { _id, name, description, techStacks, status, projectURL } = project;
   const [selected, setSelectedProject] = useContext(ProjectsContext).selected;
+  const [showConfirm, setShowConfirm] = useContext(ProjectsContext).showConfirm;
   return (
-    <div
-      onClick={() => setSelectedProject(_id)}
-      className="flex flex-col justify-between gap-4 p-3 bg-white border rounded-lg shadow-md overflow-hidden"
-    >
+    <div className="flex flex-col justify-between gap-4 p-3 bg-white border rounded-lg shadow-md overflow-hidden">
       <div className="flex flex-col gap-4">
         <div className="flex justify-between gap-2">
           <div className="flex flex-col gap-2">
@@ -52,7 +50,13 @@ const ProjectCard = ({ project }) => {
           GitHub
         </a>{" "}
         <button
-          onClick={() => {}}
+          onClick={() => setSelectedProject(_id)}
+          className="flex px-4 py-1 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-500 ease-in-out duration-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        >
+          View
+        </button>
+        <button
+          onClick={() => setShowConfirm([true, _id])}
           className="flex px-4 py-1 rounded-full border border-green-500 text-green-500 hover:bg-green-500 ease-in-out duration-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
         >
           Apply

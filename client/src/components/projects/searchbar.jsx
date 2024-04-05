@@ -19,7 +19,7 @@ const SearchBar = () => {
 
   const filterProjects = async () => {
     const response = await axios.get(
-      `http://192.168.2.104:2000/api/v1/projects?q=${searchTerm}&s=${selectedTechStack}`,
+      `http://localhost:2000/api/v1/projects?q=${searchTerm}&s=${selectedTechStack}`,
     );
     setProjects(response.data);
   };

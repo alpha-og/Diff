@@ -8,10 +8,11 @@ const ProjectsProvider = ({ children }) => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
   const [formVisible, setFormVisible] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   useEffect(() => {
     axios
-      .get("http://localhost:2000/api/v1/projects/$")
+      .get(`http://localhost:2000/api/v1/projects/`)
       .then((response) => {
         setProjects(response.data);
       })
@@ -25,6 +26,7 @@ const ProjectsProvider = ({ children }) => {
       value={{
         projects: [projects, setProjects],
         form: [formVisible, setFormVisible],
+        showConfirm: [showConfirm, setShowConfirm],
         selected: [selectedProject, setSelectedProject],
       }}
     >
