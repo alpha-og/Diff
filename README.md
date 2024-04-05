@@ -42,6 +42,7 @@ https://github.com/alpha-og/Diff/assets/76057001/1d491333-3b48-4714-8b67-23852b7
 <img width="1280" alt="Screenshot 2024-04-05 at 11 26 46 PM" src="https://github.com/alpha-og/Diff/assets/76057001/c050249f-362f-41e4-8098-c2a12f52f3ff">
 
 ## Libraries used
+**API:** Gemini API
 **Server:**
 - "@google/generative-ai": "^0.5.0",
 - "axios": "^1.6.8",
