@@ -68,10 +68,47 @@ https://github.com/alpha-og/Diff/assets/76057001/1d491333-3b48-4714-8b67-23852b7
 - "vite": "^5.2.0
 
 ## How to configure
-Instructions for setting up project
+- Clone the repository or download the project files.
+- Open a terminal and navigate to the project's root directory.
+- Open the run.sh file in a text editor and replace the following placeholders with your actual values:
+  . <Your_JWT_Secret>: Replace with a secret key for JSON Web Token (JWT) authentication.
+  . <Your_MongoDB_URI>: Replace with the connection URI for your MongoDB instance.
+  . <Your_Gemini_API> (optional): Replace with your Gemini API key if your application uses the Gemini API.
 
 ## How to Run
-Instructions for running
+- Make the run.sh script executable by running the following command:
+  ```chmod +x run.sh```
+- To start the frontend and backend servers, run the following command from the project's root directory
+  ```./run.sh```
+- Once both servers are running, you should see the following output in your terminal:
+  ```
+  Starting backend server...
+  > backend@1.0.0 dev
+  > nodemon server.js
+  
+  [nodemon] 2.0.20
+  [nodemon] to restart at any time, enter `rs`
+  [nodemon] watching path(s): *.*
+  [nodemon] watching extensions: js,mjs,json
+  [nodemon] starting `node server.js`
+  Server is running on port 2000
+  
+  Starting frontend server...
+  > frontend@0.1.0 dev
+  > vite
+  
+    vite v4.3.5 dev server running at:
+  
+    > Local: http://localhost:5173/
+    > Network: use `--host` to expose
+  
+    ready in 88ms.
+  
+  Both frontend and backend servers are running.
+  Press Ctrl+C to stop.
+
+- You can now access the frontend application at http://localhost:3000 and the backend API at http://localhost:2000
+- To stop the running servers, simply press ``Ctrl+C`` in the terminal where the run.sh script is running. The script will automatically stop both the frontend and backend processes.
 
 ## How to contribute ? 
 Pending Feature Implementations:
