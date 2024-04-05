@@ -6,6 +6,8 @@ export const ProjectsContext = createContext();
 
 const ProjectsProvider = ({ children }) => {
   const [projects, setProjects] = useState([]);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [sort, setSort] = useState("latest");
 
   useEffect(() => {
     axios
@@ -19,7 +21,9 @@ const ProjectsProvider = ({ children }) => {
   }, []);
 
   return (
-    <ProjectsContext.Provider value={{ projects: [projects, setProjects] }}>
+    <ProjectsContext.Provider
+      value={{ projects: [projects, setProjects], sort: [sort, setSort], selected: [selectedProject, setSelectedProject] }}
+    >
       {children}
     </ProjectsContext.Provider>
   );
