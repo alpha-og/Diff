@@ -30,11 +30,17 @@ Aligned with the vision of "Create, Grow and Make a Difference," Diff fosters a 
 - [ ] **Direct Communication Channel:** A secure direct messaging feature enables seamless communication between applicants and project owners, fostering collaboration.
 
 ## Link to product walkthrough
-[link to video](Link Here)
 
-![image](https://github.com/alpha-og/Diff/assets/76057001/ccc6c7a2-34b1-4bfb-b72f-02693c4862c2)
 
-   
+https://github.com/alpha-og/Diff/assets/76057001/1d491333-3b48-4714-8b67-23852b7e74b2
+
+
+
+<img width="1280" alt="Screenshot 2024-04-05 at 11 26 35 PM" src="https://github.com/alpha-og/Diff/assets/76057001/33f287f8-bc8b-4ca3-9d4b-ff3d5fc6e5ef">
+<img width="1280" alt="Screenshot 2024-04-05 at 11 25 34 PM" src="https://github.com/alpha-og/Diff/assets/76057001/6183f42f-0d80-4b72-919f-0ebf6f8640ea">
+<img width="1280" alt="Screenshot 2024-04-05 at 11 25 51 PM" src="https://github.com/alpha-og/Diff/assets/76057001/427fc5d3-631c-469d-ae8b-bd8fd77815b7">
+<img width="1280" alt="Screenshot 2024-04-05 at 11 26 46 PM" src="https://github.com/alpha-og/Diff/assets/76057001/c050249f-362f-41e4-8098-c2a12f52f3ff">
+
 ## Libraries used
 **Server:**
 - "@google/generative-ai": "^0.5.0",
