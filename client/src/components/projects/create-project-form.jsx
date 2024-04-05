@@ -26,7 +26,7 @@ const ProjectCreateForm = () => {
 
     try {
       const response = await axios.post(
-        "http://192.168.2.104:2000/api/v1/projects",
+        "http://localhost:2000/api/v1/projects",
         projectData,
       );
       setFormVisible(false);
