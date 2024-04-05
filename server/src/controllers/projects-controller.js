@@ -18,8 +18,7 @@ const createProject = async (req, res) => {
   const summary = await GemniPrompt(readmeContent, querySTMT);
 
   const Project = new ProjectModel(req.body);
-  Project.Owner = "507f1f77bcf86cd799439011";
-  Project.contributors = contributors || ["list too long or too short"];
+  Project.contributors = contributors.join(",") || "";
   Project.readmeFile = readmeContent;
   Project.techStacks = techStacks.split(",");
   Project.summary = summary;
