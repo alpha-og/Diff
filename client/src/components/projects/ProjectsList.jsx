@@ -66,9 +66,10 @@ const ProjectsList = () => {
   const [projects, setProjects] = useContext(ProjectsContext).projects;
   return (
     <div className="grid gap-4 p-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
-      {projects&&projects.map((project) => (
-        <ProjectCard key={project._id} project={project} />
-      ))}
+      {projects &&
+        projects.map((project) => (
+          <ProjectCard key={project._id} project={project} />
+        ))}
     </div>
   );
 };
