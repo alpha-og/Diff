@@ -3,9 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom"; // For navigation (optional)
 
 const ProjectDetailView = ({ projectId }) => {
-    return (
-        <>Hi</>
-    )
+  return <>Hi</>;
 };
 
 export default ProjectDetailView;

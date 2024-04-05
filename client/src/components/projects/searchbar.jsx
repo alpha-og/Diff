@@ -15,7 +15,6 @@ const SearchBar = () => {
 
   const handleTechStackChange = (event) => {
     setSelectedTechStacks(event.target.value);
-    console.log(selectedTechStack);
   };
 
   const filterProjects = async () => {
@@ -25,9 +24,6 @@ const SearchBar = () => {
     setProjects(response.data);
   };
   useEffect(() => {
-    console.log(
-      `http://192.168.2.104:2000/api/v1/projects?q=${searchTerm}&s=${selectedTechStack}`,
-    );
     filterProjects();
   }, [searchTerm, selectedTechStack]);
 
