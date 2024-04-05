@@ -32,6 +32,8 @@ Aligned with the vision of "Create, Grow and Make a Difference," Diff fosters a 
 ## Link to product walkthrough
 [link to video](Link Here)
 
+![image](https://github.com/alpha-og/Diff/assets/76057001/ccc6c7a2-34b1-4bfb-b72f-02693c4862c2)
+
    
 ## Libraries used
 **Server:**
@@ -67,7 +69,7 @@ Instructions for running
 ## How to contribute ? 
 Pending Feature Implementations:
 - [ ] **Enhanced Communication:** Temporary posts and comments facilitate efficient project updates and real time vacancy/ contribution requirement updates.
-- [ ]**Streamlined Funding Acquisition:** Integrated sponsorship requests connect projects with potential financial backers, ensuring project sustainability.
+- [ ] **Streamlined Funding Acquisition:** Integrated sponsorship requests connect projects with potential financial backers, ensuring project sustainability.
 - [ ] **LLM-driven Skill Development:** AI-powered recommendations suggest personalized roadmaps, guiding applicants on the skills needed for successful project contributions.
 - [ ] **Efficient Applicant Onboarding:** A streamlined process allows applicants to submit profiles and relevant documents during signup or application, ensuring ease of participation and providing project-specific information directly to owners.
 - [ ] **Direct Communication Channel:** A secure direct messaging feature enables seamless communication between applicants and project owners, fostering collaboration.
