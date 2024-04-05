@@ -1,18 +1,18 @@
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import { User } from "./components/components.js";
 import { Route, Routes } from "react-router-dom";
-import { ProjectsPage } from "./pages/pages.js";
+import reactLogo from "./assets/react.svg";
+import { User } from "./components/components.js";
+import { ProjectsPage, ProfilePage } from "./pages/pages.js";
+import viteLogo from "/vite.svg";
 
 function App() {
   return (
-    <>
-      <User id="660f77dd191cb0e2c20d59b0" />
+    <div className="w-screen h-screen">
       <Routes>
+        <Route path="/user/profile" element={<ProfilePage />} />
         <Route path="/projects" element={<ProjectsPage />} />
       </Routes>
-    </>
-      );
+    </div>
+  );
 }
 
 export default App;
