@@ -6,7 +6,7 @@ import {
   ProjectsList,
   SearchBar,
   ProjectCreateForm,
-    ProjectApplicationForm,
+  ProjectApplicationForm,
 } from "../components/components.js";
 
 const ProjectsPage = () => {
@@ -16,7 +16,7 @@ const ProjectsPage = () => {
   const [showConfirm, setShowConfirm] = useContext(ProjectsContext).showConfirm;
   return (
     <div className="flex flex-col gap-4 w-full h-full p-4">
-      {!selectedProject && !showConfirm && !formVisible && (
+      {!selectedProject && !showConfirm[0] && !formVisible && (
         <>
           <div className="flex gap-4">
             <SearchBar />
@@ -30,7 +30,7 @@ const ProjectsPage = () => {
           <ProjectsList />
         </>
       )}
-      {showConfirm && <ProjectApplicationForm />}
+      {showConfirm[0] && <ProjectApplicationForm />}
       {selectedProject && <ProjectDetailView projectId={selectedProject} />}
       {formVisible && <ProjectCreateForm />}
     </div>

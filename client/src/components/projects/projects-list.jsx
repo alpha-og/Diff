@@ -38,7 +38,6 @@ const ProjectCard = ({ project }) => {
             </li>
           ))}
         </ul>
-
       </div>
       <div className="flex justify-between items-center">
         <a
@@ -52,9 +51,12 @@ const ProjectCard = ({ project }) => {
         </a>{" "}
         <button
           onClick={() => setSelectedProject(_id)}
-          className="flex px-4 py-1 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-500 ease-in-out duration-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">View</button>
+          className="flex px-4 py-1 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-500 ease-in-out duration-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        >
+          View
+        </button>
         <button
-          onClick={() => setShowConfirm(true)}
+          onClick={() => setShowConfirm([true, _id])}
           className="flex px-4 py-1 rounded-full border border-green-500 text-green-500 hover:bg-green-500 ease-in-out duration-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
         >
           Apply

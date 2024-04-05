@@ -1,15 +1,25 @@
 import { useContext } from "react";
 import { ProjectsContext } from "../../store/projects";
-const ProjectApplicationForm = ({projectId}) => {
+import axios from "axios";
+const ProjectApplicationForm = () => {
   const [showConfirm, setShowConfirm] = useContext(ProjectsContext).showConfirm;
+  const [projects, setProjects] = useContext(ProjectsContext).projects;
+  const project = projects.find((project) => project._id === showConfirm[1]);
+  const projectId = showConfirm[1];
   const onConfirm = () => {
     axios
       .put(`http://localhost:2000/api/v1/projects/${projectId}/`, {
-        user: "660f77dd191cb0e2c20d59b0",
-        status: "pending",
+        applications: [
+          ...project.applications,
+          {
+            user: "660f77dd191cb0e2c20d59b0",
+            status: "pending",
+          },
+        ],
       })
       .then((response) => {
         console.log(response.data);
+        setShowConfirm([false, null]);
       })
       .catch((error) => {
         console.log(error);
