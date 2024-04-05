@@ -1,10 +1,9 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import user from "./models/user.js";
+import user from "./models/user-model.js";
 
-// import { authenticate, authorize } from "./utils/middlewares.js";
-// import { publicRouter, authRouter, userRouter } from "./utils/routes.js";
+import { userRouter } from "./utils/routes.js";
 
 import projectsRouter from "./routes/projects-routes.js";
 
