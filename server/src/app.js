@@ -3,9 +3,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import user from "./models/user-model.js";
 
-import { userRouter } from "./utils/routes.js";
-
-import projectsRouter from "./routes/projects-routes.js";
+import { userRouter, projectsRouter } from "./utils/routes.js";
 
 const ROUTE_PREFIX = "/api/v1";
 
@@ -14,10 +12,10 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  }),
+    cors({
+        origin: "http://localhost:3000",
+        credentials: true,
+    }),
 );
 
 // app.post("/api/v1/signup", (req, res) => {
@@ -32,4 +30,5 @@ app.use(
 // app.use(ROUTE_PREFIX, authRouter);
 // app.use(ROUTE_PREFIX + "/user", authenticate, authorize, userRouter);
 app.use(ROUTE_PREFIX, projectsRouter);
+app.use(ROUTE_PREFIX, userRouter);
 export default app;
