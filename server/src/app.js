@@ -1,12 +1,11 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import user from "./models/user.js";
+import user from "./models/user-model.js";
 
-// import { authenticate, authorize } from "./utils/middlewares.js";
-// import { publicRouter, authRouter, userRouter } from "./utils/routes.js";
+import { userRouter } from "./utils/routes.js";
 
-const ROUTE_PREFIX = "/api/v1";
+const ROUTE_PREFIX = "/api/v1/";
 
 const app = express();
 
@@ -27,8 +26,6 @@ app.post("/api/v1/signup", (req, res) => {
     .catch((err) => res.status(400).json({ message: err }));
 });
 
-// app.use(ROUTE_PREFIX, publicRouter);
-// app.use(ROUTE_PREFIX, authRouter);
-// app.use(ROUTE_PREFIX + "/user", authenticate, authorize, userRouter);
+app.use(ROUTE_PREFIX, userRouter);
 
 export default app;
