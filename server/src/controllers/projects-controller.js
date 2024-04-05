@@ -1,9 +1,13 @@
 import ProjectModel from "../models/projects-model.js";
 import GemniPrompt from "../utils/modelAi.js";
+import fetchRepoData from "../utils/gitPull.js";
 import mongoose from "mongoose";
 
 const createProject = async (req, res) => {
     const description = req.body.description;
+    const githubURL = req.body.projectURL;
+    const head = githubURL.split("/");
+    console.log(head);
     const querySTMT =
         "give me a comma separated string containing all the tech stacks required by the project based on this abstract. I DO NOT want arrays, json objects, or any other fancy stuff. simple plain comma separated words corresponding to the tech stack for the project";
     let techStacks = await GemniPrompt(description, querySTMT);
