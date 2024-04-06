@@ -8,32 +8,32 @@ NC='\033[0m' # No Color
 
 # Function to run backend
 run_backend() {
-    echo -e "${BLUE}Starting backend server...${NC}"
-    cd server 
-    npm i
-    export PORT=2000
-    export JWT_SECRET="<Your_JWT_Secret>"
-    export MONOGO_URI="<Your_MongoDB_URI>"
-    export GEMINI_API="<Your_Gemini_API>"
-    npm run dev &
-    BACKEND_PID=$!
-    cd ..
+	echo -e "${BLUE}Starting backend server...${NC}"
+	cd server
+	npm i
+	export PORT=2000
+	export JWT_SECRET="<Your_JWT_Secret>"
+	export MONGO_URL="mongodb+srv://tester:f68Lnicz1Df8GN9D@diffdb.4ccwtbi.mongodb.net/Diff"
+	export GEMINI_API="<Your_Gemini_API>"
+	npm run dev &
+	BACKEND_PID=$!
+	cd ..
 }
 
 # Function to run frontend
 run_frontend() {
-    echo -e "${GREEN}Starting frontend server...${NC}"
-    cd client
-    npm i
-    npm run dev &
-    FRONTEND_PID=$!
-    cd ..
+	echo -e "${GREEN}Starting frontend server...${NC}"
+	cd client
+	npm i
+	npm run dev &
+	FRONTEND_PID=$!
+	cd ..
 }
 
 # Function to stop processes
 stop_processes() {
-    echo -e "${RED}Stopping processes...${NC}"
-    kill $BACKEND_PID $FRONTEND_PID 2>/dev/null
+	echo -e "${RED}Stopping processes...${NC}"
+	kill $BACKEND_PID $FRONTEND_PID 2>/dev/null
 }
 
 # Main script
