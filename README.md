@@ -20,7 +20,7 @@ Aligned with the vision of "Create, Grow and Make a Difference," Diff fosters a 
 - [x] **Effortless Project Visibility:** Publicly accessible project profiles showcase project goals, desired skillsets, and utilized technologies, attracting a wider talent pool.
 - [ ] **Enhanced Communication:** Temporary posts and comments facilitate efficient project updates and real time vacancy/ contribution requirement updates.
 - [x] **AI-powered Project Synopses:** Large Language Model (LLM) summaries provide concise overviews of project objectives and progress, streamlining communication with stakeholders and project applicants.
-- [ ]**Streamlined Funding Acquisition:** Integrated sponsorship requests connect projects with potential financial backers, ensuring project sustainability.
+- [ ] **Streamlined Funding Acquisition:** Integrated sponsorship requests connect projects with potential financial backers, ensuring project sustainability.
 
 **Empowering Project Applicants:**
 
