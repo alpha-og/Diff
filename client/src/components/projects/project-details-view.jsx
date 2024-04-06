@@ -38,18 +38,22 @@ const ProjectDetailView = ({ projectId }) => {
         {project.contributors?.length > 0 && (
           <div colSpan={2}>
             <h3 className="text-lg font-semibold mb-2">Contributors</h3>
-            <ul className="space-y-2">
-              {project.contributors.constructor === Array ?project.contributors.map((contributor) => (
-                <li key={contributor._id} className="flex items-center">
-                  <span className="text-gray-700">{contributor.username}</span>
-                </li>
-              )):
-                                
-                <li className="flex items-center">
-                  <span className="text-gray-700">{project.contributors.username}</span>
-                </li>
-                            }
-            </ul>
+            {project.contributors.constructor === Array && (
+              <ul className="space-y-2">
+                {project.contributors.map((contributor) => (
+                  <li key={contributor._id} className="flex items-center">
+                    <span className="text-gray-700">
+                      {contributor.username}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {project.contributors.constructor === String && (
+              <p className="flex items-center text-wrap overflow-hidden">
+                <span className="text-gray-700">{project.contributors}</span>
+              </p>
+            )}
           </div>
         )}
         {project.vacancies?.length > 0 && (
