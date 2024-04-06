@@ -18,8 +18,8 @@ const createProject = async (req, res) => {
   const summary = await GemniPrompt(readmeContent, querySTMT);
 
   const Project = new ProjectModel(req.body);
-  Project.contributors = contributors.join(",") || "";
-  Project.readmeFile = readmeContent;
+  // Project.contributors = contributors.join(",") || "";
+  // Project.readmeFile = readmeContent;
   Project.techStacks = techStacks.split(",");
   Project.summary = summary;
   try {
