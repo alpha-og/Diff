@@ -20,7 +20,7 @@ Aligned with the vision of "Create, Grow and Make a Difference," Diff fosters a 
 - [x] **Effortless Project Visibility:** Publicly accessible project profiles showcase project goals, desired skillsets, and utilized technologies, attracting a wider talent pool.
 - [ ] **Enhanced Communication:** Temporary posts and comments facilitate efficient project updates and real time vacancy/ contribution requirement updates.
 - [x] **AI-powered Project Synopses:** Large Language Model (LLM) summaries provide concise overviews of project objectives and progress, streamlining communication with stakeholders and project applicants.
-- [ ]**Streamlined Funding Acquisition:** Integrated sponsorship requests connect projects with potential financial backers, ensuring project sustainability.
+- [ ] **Streamlined Funding Acquisition:** Integrated sponsorship requests connect projects with potential financial backers, ensuring project sustainability.
 
 **Empowering Project Applicants:**
 
@@ -73,7 +73,7 @@ https://github.com/alpha-og/Diff/assets/76057001/1d491333-3b48-4714-8b67-23852b7
 - Open the run.sh file in a text editor and replace the following placeholders with your actual values:
   . <Your_JWT_Secret>: Replace with a secret key for JSON Web Token (JWT) authentication.
   . <Your_MongoDB_URI>: Replace with the connection URI for your MongoDB instance.
-  . <Your_Gemini_API> (optional): Replace with your Gemini API key if your application uses the Gemini API.
+  . <Your_Gemini_API>: Replace with your Gemini API key for enabling LLM features
 
 ## How to Run
 - Make the run.sh script executable by running the following command:
