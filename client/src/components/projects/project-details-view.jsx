@@ -39,11 +39,16 @@ const ProjectDetailView = ({ projectId }) => {
           <div colSpan={2}>
             <h3 className="text-lg font-semibold mb-2">Contributors</h3>
             <ul className="space-y-2">
-              {project.contributors.map((contributor) => (
+              {project.contributors.constructor === Array ?project.contributors.map((contributor) => (
                 <li key={contributor._id} className="flex items-center">
                   <span className="text-gray-700">{contributor.username}</span>
                 </li>
-              ))}
+              )):
+                                
+                <li className="flex items-center">
+                  <span className="text-gray-700">{project.contributors.username}</span>
+                </li>
+                            }
             </ul>
           </div>
         )}
