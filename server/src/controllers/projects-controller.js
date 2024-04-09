@@ -1,4 +1,5 @@
 import ProjectModel from "../models/projects-model.js";
+import UserModel from "../models/user-model.js";
 import GemniPrompt from "../utils/modelAi.js";
 import fetchRepoData from "../utils/gitPull.js";
 import mongoose from "mongoose";
@@ -14,12 +15,23 @@ const createProject = async (req, res) => {
   let querySTMT =
     "give me a comma separated string containing all the tech stacks required by the project based on this abstract. I DO NOT want arrays, json objects, or any other fancy stuff. simple plain comma separated words corresponding to the tech stack for the project, if there are not tech stacks, just type ''";
   const techStacks = await GemniPrompt(description, querySTMT);
-  querySTMT = "Provide a summary of the given text";
+  querySTMT =
+    "Provide a summary of the given text only in text in a single paragraph with maximum of 4 sentences";
   const summary = await GemniPrompt(readmeContent, querySTMT);
 
   const Project = new ProjectModel(req.body);
-  // Project.contributors = contributors.join(",") || "";
+  const contributorsId = contributors.map((contributor) => {
+    try {
+      UserModel.find({ username: contributor })._id;
+    } catch (error) {
+      console.log(error);
+    }
+  });
   // Project.readmeFile = readmeContent;
+  const isNull = (value) => {
+    value != null;
+  };
+  Project.contributors = contributorsId.filter(isNull) || [];
   Project.techStacks = techStacks.split(",");
   Project.summary = summary;
   try {

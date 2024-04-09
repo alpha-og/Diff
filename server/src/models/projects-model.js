@@ -17,8 +17,7 @@ const projectSchema = new mongoose.Schema({
   },
   projectURL: { type: String, required: false },
   readmeFile: { type: String, required: false },
-  // contributors: [{ type: mongoose.Schema.Types.ObjectId, ref: "users" }],
-  contributors: { type: String, required: false },
+  contributors: [{ type: mongoose.Schema.Types.ObjectId, ref: "users" }],
   sponsorship: [
     {
       sponsor: { type: mongoose.Schema.Types.ObjectId, ref: "sponsors" },
