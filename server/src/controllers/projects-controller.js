@@ -27,7 +27,7 @@ const createProject = async (req, res) => {
       console.log(error);
     }
   });
-  // Project.readmeFile = readmeContent;
+  Project.readmeFile = readmeContent;
   const isNull = (value) => {
     value != null;
   };
